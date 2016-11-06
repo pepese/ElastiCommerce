@@ -1,24 +1,36 @@
-# README
+# ElastiCommerce
+Ruby on RailsでECパッケージを作ってみる。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+以下の機能を持つ。（作りかけはご愛嬌）
 
-Things you may want to cover:
+* 商品マスタ管理機能
+    * 在庫管理機能も含む
+* 会員マスタ管理機能
 
-* Ruby version
+## 実装環境
 
-* System dependencies
+* Ruby 2.3.1
+* Ruby on Rails 5.0.0.1
 
-* Configuration
+## 機能実装メモ
 
-* Database creation
+### 最初に
 
-* Database initialization
+```
+rails new ElastiCommerce
+```
 
-* How to run the test suite
+### 商品マスタ
 
-* Services (job queues, cache servers, search engines, etc.)
+商品テーブルの作成
 
-* Deployment instructions
+* 商品ID / product_id / integer / Not Null
+* 名前 / name / string / Not Null
+* 商品説明 / description / string
+* 削除フラグ / del_flag / integer / Not Null
+* 作成日時 / create_date / timestamp / Not Null
+* 更新日時 / update_date / timestamp / Not Null
 
-* ...
+```
+rails generate scaffold product product_id:integer name:string description:string del_flag:integer --no-indexes
+```
