@@ -46,5 +46,5 @@ $ bundle exec rails g rspec:install
 * 更新日時 / update_date / timestamp / Not Null
 
 ```
-rails generate scaffold product product_id:integer name:string description:string del_flag:integer
+bundle exec rails generate scaffold product product_id:integer name:string description:string del_flag:integer
 ```
