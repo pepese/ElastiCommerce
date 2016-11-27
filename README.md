@@ -16,8 +16,22 @@ Ruby on RailsでECパッケージを作ってみる。
 
 ### 最初に
 
+```bash
+$ rails new ElastiCommerce
+$ cd ElasticCommerce
 ```
-rails new ElastiCommerce
+
+Gemfileに以下を追加。
+
+```ruby
+group :test, :development do
+  gem 'rspec-rails', '~> 3.0.0'
+end
+```
+
+```bash
+$ bundle install
+$ bundle exec rails g rspec:install
 ```
 
 ### 商品マスタ
@@ -32,5 +46,5 @@ rails new ElastiCommerce
 * 更新日時 / update_date / timestamp / Not Null
 
 ```
-rails generate scaffold product product_id:integer name:string description:string del_flag:integer --no-indexes
+rails generate scaffold product product_id:integer name:string description:string del_flag:integer
 ```
