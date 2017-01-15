@@ -16,7 +16,7 @@ Ruby on RailsでECパッケージを作ってみる。
 
 ### 最初に
 
-```bash
+```sh
 $ rails new ElastiCommerce
 $ cd ElasticCommerce
 ```
@@ -29,10 +29,12 @@ group :test, :development do
 end
 ```
 
-```bash
+```sh
 $ bundle install
 $ bundle exec rails g rspec:install
 ```
+
+ここまで作成しておけば、```rails generate```コマンド実行時にRSpecのテストスクリプトも作成されるようになる。
 
 ### 商品マスタ
 
@@ -48,3 +50,11 @@ $ bundle exec rails g rspec:install
 ```
 bundle exec rails generate scaffold product product_id:integer name:string description:string del_flag:integer
 ```
+
+### 起動の前に
+
+```sh
+$ bundle exec rake db:migrate
+```
+
+```create table``` が実行される。
